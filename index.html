@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CodeSeed</title>
+    <meta
+      name="description"
+      content="Grow a software project idea you could actually ship. Seeded, filterable, savable, and ready for GitHub Pages."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Random project generator</p>
+        <h1>CodeSeed</h1>
+        <p class="lede">
+          Grow a software project idea with an actual scope, a real hook, and a README blurb you
+          could paste into a new repo tonight.
+        </p>
+      </div>
+      <div class="hero-note">
+        <p class="note-label">What it does</p>
+        <p>
+          Mixes a vibe, a platform, a scope, a problem space, and a twist into a seeded build
+          prompt you can save or share.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel control-panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">Control bed</p>
+            <h2>Tune the ingredients</h2>
+          </div>
+          <button id="surprise-button" class="button button-ghost" type="button">Random seed</button>
+        </div>
+
+        <form id="controls-form" class="controls-grid">
+          <label class="field">
+            <span>Seed</span>
+            <input id="seed-input" name="seed" type="text" autocomplete="off" spellcheck="false">
+          </label>
+
+          <label class="field">
+            <span>Platform</span>
+            <select id="platform-select" name="platform"></select>
+          </label>
+
+          <label class="field">
+            <span>Vibe</span>
+            <select id="vibe-select" name="vibe"></select>
+          </label>
+
+          <label class="field">
+            <span>Scope</span>
+            <select id="scope-select" name="scope"></select>
+          </label>
+
+          <div class="button-row">
+            <button class="button button-primary" type="submit">Grow idea</button>
+            <button id="reset-button" class="button button-ghost" type="button">Use daily seed</button>
+          </div>
+        </form>
+
+        <p class="hint">
+          Same seed plus the same filters equals the same project. That makes ideas easy to share in
+          a URL.
+        </p>
+      </section>
+
+      <section class="panel result-panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">Project card</p>
+            <h2 id="idea-title">Planting an idea...</h2>
+          </div>
+          <div class="result-actions">
+            <button id="save-button" class="button button-secondary" type="button">Save</button>
+            <button id="share-button" class="button button-ghost" type="button">Copy link</button>
+            <button id="markdown-button" class="button button-ghost" type="button">Copy markdown</button>
+          </div>
+        </div>
+
+        <div class="seed-strip">
+          <span class="seed-pill" id="seed-pill">Seed</span>
+          <span class="seed-pill seed-pill-muted" id="timeline-pill">Scope</span>
+        </div>
+
+        <p id="idea-pitch" class="idea-pitch"></p>
+
+        <div id="ingredient-list" class="ingredient-list"></div>
+
+        <div class="two-up">
+          <article class="mini-card">
+            <p class="section-label">Core loop</p>
+            <p id="core-loop"></p>
+          </article>
+          <article class="mini-card">
+            <p class="section-label">Repo angle</p>
+            <p id="repo-angle"></p>
+          </article>
+        </div>
+
+        <div class="lists">
+          <article class="list-card">
+            <p class="section-label">MVP checklist</p>
+            <ul id="mvp-list"></ul>
+          </article>
+          <article class="list-card">
+            <p class="section-label">Stretch goals</p>
+            <ul id="stretch-list"></ul>
+          </article>
+        </div>
+
+        <article class="blurb-card">
+          <p class="section-label">README blurb</p>
+          <p id="repo-blurb"></p>
+        </article>
+
+        <p id="status-message" class="status-message" aria-live="polite"></p>
+      </section>
+
+      <aside class="panel favorites-panel">
+        <div class="panel-header">
+          <div>
+            <p class="section-label">Saved ideas</p>
+            <h2>Greenhouse</h2>
+          </div>
+        </div>
+
+        <p class="favorites-copy">
+          Save the interesting ones here, then reopen them later with the same seed and filters.
+        </p>
+
+        <ul id="favorites-list" class="favorites-list"></ul>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Zero dependencies. Static hosting friendly. Ideal for GitHub Pages, Netlify, or dropping
+        into any `/docs` folder.
+      </p>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "codeseed",
+  "version": "1.0.0",
+  "description": "CodeSeed is a zero-dependency project idea generator you can publish to GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
